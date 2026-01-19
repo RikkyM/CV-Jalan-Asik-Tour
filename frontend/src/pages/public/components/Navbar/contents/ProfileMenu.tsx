@@ -11,7 +11,7 @@ const ProfileMenu = () => {
           { to: "/visi-misi", label: "Visi & Misi" },
         ].map((data, index) => (
           <NavLink
-            key={index}
+            key={data.label ?? index}
             to={data.to}
             className="group relative mb-2 flex w-full cursor-pointer items-center gap-1.5 text-2xl font-semibold"
           >

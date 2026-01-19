@@ -5,6 +5,8 @@
 
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
 @theme {
   --font-pj: "Plus Jakarta Sans", sans-serif;
   --font-open: "Open Sans", sans-serif;
