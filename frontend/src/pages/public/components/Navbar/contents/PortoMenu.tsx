@@ -1,0 +1,37 @@
+import { NavLink } from "react-router-dom";
+import Image from "@/assets/img/1.jpeg";
+
+const PortoMenu = () => {
+  return (
+    <section className="font-pj flex w-full">
+      <div className="relative my-10 flex flex-1 flex-col px-7">
+        <div className="flex gap-10">
+          <div className="min-w-62">
+            <h3 className="mb-2">Porto</h3>
+            {[
+              { to: "/mitra-kerja", label: "Mitra Kerja" },
+              { to: "/album-kegiatan", label: "Album Kegiatan" },
+            ].map((data, index) => (
+              <NavLink
+                key={index}
+                to={data.to}
+                className="group relative mb-2 flex w-full cursor-pointer items-center gap-1.5 text-2xl font-semibold"
+              >
+                <span className="transition-all group-hover:translate-x-4">
+                  {data.label}
+                </span>
+                <span className="absolute right-0 -bottom-1 h-0.5 w-0 bg-black transition-[width] duration-300 group-hover:right-auto group-hover:left-0 group-hover:w-full"></span>
+                <span className="absolute left-0 size-2 scale-0 rounded-full bg-black transition-all group-hover:scale-100 group-hover:delay-100 group-hover:duration-300"></span>
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="flex-1 p-5">
+        <img src={Image} alt="" className="h-full max-w-90" />
+      </div>
+    </section>
+  );
+};
+
+export default PortoMenu;
