@@ -8,9 +8,9 @@ import {
   UserCheck,
 } from "lucide-react";
 import HeroImage from "@/assets/img/hero-image.webp";
-import Img1 from "@/assets/img/img1.webp";
-import Img2 from "@/assets/img/img2.webp";
-import Hotel from "@/assets/img/hotel.webp";
+// import Img1 from "@/assets/img/img1.webp";
+// import Img2 from "@/assets/img/img2.webp";
+// import Hotel from "@/assets/img/hotel.webp";
 
 const HomePages = () => {
   return (
