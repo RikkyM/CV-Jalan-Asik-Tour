@@ -8,9 +8,9 @@ import {
   UserCheck,
 } from "lucide-react";
 import HeroImage from "@/assets/img/hero-image.webp";
-// import Img1 from "@/assets/img/img1.webp";
-// import Img2 from "@/assets/img/img2.webp";
-// import Hotel from "@/assets/img/hotel.webp";
+import Img1 from "@/assets/img/img1.webp";
+import Img2 from "@/assets/img/img2.webp";
+import Hotel from "@/assets/img/hotel.webp";
 
 const HomePages = () => {
   return (
@@ -81,31 +81,31 @@ const HomePages = () => {
         </div>
         <div className="scrollbar-hide relative m-2 hidden w-full max-w-90 snap-y snap-proximity snap-start scroll-pt-3 space-y-3 overflow-auto scroll-smooth rounded-3xl outline-none lg:block">
           <div className="squircle group relative h-full max-h-52 snap-start overflow-hidden bg-blue-500">
-            {/* <img
+            <img
               src={Img1}
               alt="image"
               className="h-full w-full object-cover object-center transition-all duration-200 hover:brightness-80"
-            /> */}
+            />
             <div className="absolute bottom-0 px-5 font-medium text-white opacity-0 transition-all duration-300 group-hover:bottom-3 group-hover:opacity-100">
               Pantai
             </div>
           </div>
           <div className="squircle group relative h-full max-h-52 snap-start overflow-hidden bg-blue-500">
-            {/* <img
+            <img
               src={Hotel}
               alt="image"
               className="h-full w-full object-cover object-center transition-all duration-200 hover:brightness-80"
-            /> */}
+            />
             <div className="absolute bottom-0 px-5 font-medium text-white opacity-0 transition-all duration-300 group-hover:bottom-3 group-hover:opacity-100">
               Penginapan
             </div>
           </div>
           <div className="squircle group relative h-full max-h-52 snap-start overflow-hidden bg-blue-500">
-            {/* <img
+            <img
               src={Img2}
               alt="image"
               className="h-full w-full object-cover object-center transition-all duration-200 hover:brightness-80"
-            /> */}
+            />
             <div className="absolute bottom-0 px-5 font-medium text-white opacity-0 transition-all duration-300 group-hover:bottom-3 group-hover:opacity-100">
               Gunung
             </div>
