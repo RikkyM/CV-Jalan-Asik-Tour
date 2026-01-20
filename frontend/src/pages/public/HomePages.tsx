@@ -24,7 +24,6 @@ const HomePages = () => {
               className="h-full w-full object-cover object-right"
               loading="eager"
               decoding="async"
-              fetchPriority="high"
             />
             <div className="font-pj absolute inset-0 grid bg-black/10 px-10 py-10 font-bold text-white sm:py-15 md:py-27">
               <div>
