@@ -46,7 +46,7 @@ const Navbar = () => {
             srcSet={`${Logo80} 1x, ${Logo160} 2x`}
             width={80}
             height={80}
-            className="w-full size-20"
+            className="h-full"
             alt="logo"
             loading="eager"
             decoding="async"
