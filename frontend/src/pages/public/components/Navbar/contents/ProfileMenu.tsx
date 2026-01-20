@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Image from "@/assets/img/hero-image.webp";
+import { memo } from "react";
 
 const ProfileMenu = () => {
   return (
@@ -24,10 +25,10 @@ const ProfileMenu = () => {
         ))}
       </div>
       <div className="h-full max-w-90 p-5">
-        <img src={Image} alt="" className="h-full object-cover object-center" />
+        <img src={Image} alt="gambar" loading="eager" className="h-full object-cover object-center" />
       </div>
     </section>
   );
 };
 
-export default ProfileMenu;
+export default memo(ProfileMenu);

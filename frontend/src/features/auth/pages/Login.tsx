@@ -1,4 +1,4 @@
-import bg from "@/assets/background.jpg";
+import bg from "@/assets/background.webp";
 import LoginForm from "../components/LoginForm";
 import { useLogin } from "../hooks/useLogin";
 

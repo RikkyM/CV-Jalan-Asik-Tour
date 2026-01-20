@@ -1,7 +1,7 @@
-import Image1 from "@/assets/img/1.jpeg";
-import Image2 from "@/assets/img/2.jpeg";
-import Image3 from "@/assets/img/3.jpeg";
-import Image4 from "@/assets/img/4.jpeg";
+import Image1 from "@/assets/img/1.webp";
+import Image2 from "@/assets/img/2.webp";
+import Image3 from "@/assets/img/3.webp";
+import Image4 from "@/assets/img/4.webp";
 
 const AlbumPages = () => {
   return (

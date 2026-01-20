@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import Logo from "@/assets/img/logo.webp";
+import Logo80 from "@/assets/img/logo-80.webp";
+import Logo160 from "@/assets/img/logo-160.webp";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import Dropdown from "./Dropdown";
@@ -27,11 +28,11 @@ const Navbar = () => {
     const handleResize = () => {
       setIsOpen(false);
       setActiveMenu(null);
-    }
+    };
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <nav
@@ -40,9 +41,18 @@ const Navbar = () => {
     >
       <div className="relative mx-auto flex h-full w-full max-w-7xl items-center justify-between border-b border-gray-200 bg-white p-3">
         <NavLink to="/" className="h-full">
-          <img src={Logo} className="h-full" />
+          <img
+            src={Logo80}
+            srcSet={`${Logo80} 1x, ${Logo160} 2x`}
+            width={80}
+            height={80}
+            className="w-full size-20"
+            alt="logo"
+            loading="eager"
+            decoding="async"
+          />
         </NavLink>
-        <ul className="font-segoe flex hidden items-center gap-4 md:flex">
+        <ul className="flex hidden items-center gap-4 md:flex">
           <NavLink
             className="group relative"
             to="/"
@@ -84,7 +94,7 @@ const Navbar = () => {
           <NavLink
             to="/login"
             onMouseEnter={closeDropdown}
-            className="group relative rounded-sm bg-transparent px-4 py-1.5 lg:px-3 lg:py-1 font-mono text-sm font-medium outline-none md:text-base"
+            className="group relative rounded-sm bg-transparent px-4 py-1.5 font-mono text-sm font-medium outline-none md:text-base lg:px-3 lg:py-1"
           >
             <div className="absolute top-0 left-0 z-10 h-full w-full rounded-md border transition-all duration-300 group-hover:scale-85"></div>
             <div className="relative text-black transition-all duration-300 group-hover:scale-85">

@@ -1,4 +1,4 @@
-import PengantarImage from "@/assets/img/1.jpeg";
+import PengantarImage from "@/assets/img/1.webp";
 
 const PengantarPages = () => {
   return (

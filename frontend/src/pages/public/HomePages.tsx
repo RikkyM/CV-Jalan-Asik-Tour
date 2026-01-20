@@ -8,9 +8,9 @@ import {
   UserCheck,
 } from "lucide-react";
 import HeroImage from "@/assets/img/hero-image.webp";
-import Img1 from "@/assets/img/img1.jpg";
-import Img2 from "@/assets/img/img2.jpg";
-import Hotel from "@/assets/img/hotel.jpg";
+import Img1 from "@/assets/img/img1.webp";
+import Img2 from "@/assets/img/img2.webp";
+import Hotel from "@/assets/img/hotel.webp";
 
 const HomePages = () => {
   return (
@@ -21,7 +21,10 @@ const HomePages = () => {
             <img
               src={HeroImage}
               alt="hero"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-cover object-right"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
             <div className="font-pj absolute inset-0 grid bg-black/10 px-10 py-10 font-bold text-white sm:py-15 md:py-27">
               <div>
@@ -79,31 +82,31 @@ const HomePages = () => {
         </div>
         <div className="scrollbar-hide relative m-2 hidden w-full max-w-90 snap-y snap-proximity snap-start scroll-pt-3 space-y-3 overflow-auto scroll-smooth rounded-3xl outline-none lg:block">
           <div className="squircle group relative h-full max-h-52 snap-start overflow-hidden bg-blue-500">
-            <img
+            {/* <img
               src={Img1}
               alt="image"
               className="h-full w-full object-cover object-center transition-all duration-200 hover:brightness-80"
-            />
+            /> */}
             <div className="absolute bottom-0 px-5 font-medium text-white opacity-0 transition-all duration-300 group-hover:bottom-3 group-hover:opacity-100">
               Pantai
             </div>
           </div>
           <div className="squircle group relative h-full max-h-52 snap-start overflow-hidden bg-blue-500">
-            <img
+            {/* <img
               src={Hotel}
               alt="image"
               className="h-full w-full object-cover object-center transition-all duration-200 hover:brightness-80"
-            />
+            /> */}
             <div className="absolute bottom-0 px-5 font-medium text-white opacity-0 transition-all duration-300 group-hover:bottom-3 group-hover:opacity-100">
               Penginapan
             </div>
           </div>
           <div className="squircle group relative h-full max-h-52 snap-start overflow-hidden bg-blue-500">
-            <img
+            {/* <img
               src={Img2}
               alt="image"
               className="h-full w-full object-cover object-center transition-all duration-200 hover:brightness-80"
-            />
+            /> */}
             <div className="absolute bottom-0 px-5 font-medium text-white opacity-0 transition-all duration-300 group-hover:bottom-3 group-hover:opacity-100">
               Gunung
             </div>
@@ -159,8 +162,8 @@ const HomePages = () => {
       </section>
       <section className="font-pj h-max touch-pan-y bg-[#FF9C5A] px-4 text-white shadow-lg lg:px-10">
         <div className="relative mx-auto flex h-full max-w-7xl flex-col p-2 lg:flex-row lg:gap-10">
-          <div>
-            <h2 className="sticky top-30 mt-10 block text-xl font-bold after:absolute after:right-0 after:-bottom-3 after:h-1 after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:right-auto hover:after:left-0 hover:after:w-full lg:my-27 lg:text-5xl">
+          <div className="flex-1 bg-red-500">
+            <h2 className="sticky top-30 mt-10 block text-right text-xl font-bold after:absolute after:right-0 after:-bottom-3 after:h-1 after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:right-auto hover:after:left-0 hover:after:w-full lg:my-27 lg:text-3xl">
               Nilai Perusahaan
             </h2>
           </div>
@@ -200,7 +203,7 @@ const HomePages = () => {
                     id={data.title}
                     className="peer hidden"
                   />
-                  <div className="flex w-full justify-between text-xl transition-colors duration-300 hover:text-gray-300 lg:text-3xl">
+                  <div className="flex w-full justify-between text-xl transition-colors duration-300 hover:text-gray-300 lg:text-2xl">
                     <span>{data.title}</span> <span>0{index + 1}</span>
                   </div>
                   <div className="mt-4 mb-4 h-0 max-h-0 overflow-hidden font-normal transition-all duration-300 duration-500 peer-checked:h-full peer-checked:max-h-50 lg:text-lg">

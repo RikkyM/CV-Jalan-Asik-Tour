@@ -40,8 +40,12 @@ const Dropdown = ({
     >
       <div
         onMouseLeave={onMouseLeave}
-        className={`mx-auto h-max max-w-full overflow-hidden rounded-md border border-gray-300 bg-white shadow transition-[width,height,opacity] duration-300 ease-[cubic-bezier(0.79,0.14,0.15,0.86)] ${isOpen ? "opacity-100" : "opacity-0"} `}
-        style={{ width: dimensions.width, height: dimensions.height }}
+        className={`mx-auto h-max max-w-full overflow-hidden border border-gray-300 bg-white shadow transition-[width,height,opacity] duration-300 ease-[cubic-bezier(0.79,0.14,0.15,0.86)] ${isOpen ? "opacity-100" : "opacity-0"} `}
+        style={{
+          width: dimensions.width || "auto",
+          height: dimensions.height || "auto",
+          minHeight: isOpen ? "200px" : "0",
+        }}
       >
         <div
           key={activeMenu}

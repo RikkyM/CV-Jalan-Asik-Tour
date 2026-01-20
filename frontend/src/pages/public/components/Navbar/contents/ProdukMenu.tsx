@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import Image from "@/assets/img/hotel.jpg";
+import Image from "@/assets/img/hotel.webp";
+import { memo } from "react";
 
 const ProdukMenu = () => {
   return (
@@ -31,10 +32,10 @@ const ProdukMenu = () => {
         </div>
       </div>
       <div className="flex-1 p-5">
-        <img src={Image} alt="" className="h-full max-w-90" />
+        <img src={Image} alt="gambar" loading="eager" className="h-full max-w-90" />
       </div>
     </section>
   );
 };
 
-export default ProdukMenu;
+export default memo(ProdukMenu);

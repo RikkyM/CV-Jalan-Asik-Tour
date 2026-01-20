@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-import Image from "@/assets/img/1.jpeg";
+import Image from "@/assets/img/1.webp";
+import { memo } from "react";
 
 const PortoMenu = () => {
   return (
-    <section className="font-pj flex w-full">
+    <section className="font-pj flex max-w-full">
       <div className="relative my-10 flex flex-1 flex-col px-7">
         <div className="flex gap-10">
           <div className="min-w-62">
@@ -28,10 +29,10 @@ const PortoMenu = () => {
         </div>
       </div>
       <div className="flex-1 p-5">
-        <img src={Image} alt="" className="h-full max-w-90" />
+        <img src={Image} alt="gambar" loading="eager" className="h-full max-w-90" />
       </div>
     </section>
   );
 };
 
-export default PortoMenu;
+export default memo(PortoMenu);
