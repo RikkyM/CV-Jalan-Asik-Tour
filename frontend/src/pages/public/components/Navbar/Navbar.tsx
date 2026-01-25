@@ -2,12 +2,13 @@ import { NavLink } from "react-router-dom";
 import Logo80 from "@/assets/img/logo-80.webp";
 import Logo160 from "@/assets/img/logo-160.webp";
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
 import Dropdown from "./Dropdown";
 import type { MenuKey } from "./types";
 import { MENUS } from "./menu.config";
+import { useSidebar } from "../../hooks/useSidebar";
 
 const Navbar = () => {
+  const { toggle } = useSidebar();
   const [activeMenu, setActiveMenu] = useState<MenuKey | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,7 +47,7 @@ const Navbar = () => {
             srcSet={`${Logo80} 1x, ${Logo160} 2x`}
             width={80}
             height={80}
-            className="h-full"
+            className="h-full w-max"
             alt="logo"
             loading="eager"
             decoding="async"
@@ -94,7 +95,7 @@ const Navbar = () => {
           <NavLink
             to="/login"
             onMouseEnter={closeDropdown}
-            className="group relative rounded-sm bg-transparent px-4 py-1.5 font-mono text-sm font-medium outline-none md:text-base lg:px-3 lg:py-1"
+            className="group relative rounded-sm bg-transparent px-3 py-1.5 font-mono text-sm font-medium outline-none md:text-base lg:py-1"
           >
             <div className="absolute top-0 left-0 z-10 h-full w-full rounded-md border transition-all duration-300 group-hover:scale-85"></div>
             <div className="relative text-black transition-all duration-300 group-hover:scale-85">
@@ -107,9 +108,11 @@ const Navbar = () => {
           </NavLink>
           <button
             type="button"
-            className="cursor-pointer rounded p-1.5 transition-colors duration-300 hover:bg-gray-300 md:hidden"
+            onClick={() => toggle()}
+            className="cursor-pointer rounded p-1.5 font-mono font-medium transition-colors duration-300 hover:bg-gray-300 md:hidden"
           >
-            <Menu />
+            {/* <Menu /> */}
+            <span className="text-sm">Menu</span>
           </button>
           <Dropdown
             isOpen={isOpen}

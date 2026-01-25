@@ -161,7 +161,7 @@ const HomePages = () => {
       </section>
       <section className="font-pj h-max touch-pan-y bg-[#FF9C5A] px-4 text-white shadow-lg lg:px-10">
         <div className="relative mx-auto flex h-full max-w-7xl flex-col p-2 lg:flex-row lg:gap-10">
-          <div className="flex-1 bg-red-500">
+          <div className="flex-1">
             <h2 className="sticky top-30 mt-10 block text-right text-xl font-bold after:absolute after:right-0 after:-bottom-3 after:h-1 after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:right-auto hover:after:left-0 hover:after:w-full lg:my-27 lg:text-3xl">
               Nilai Perusahaan
             </h2>
