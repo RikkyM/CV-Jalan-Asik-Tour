@@ -4,6 +4,7 @@ import type { MenuKey } from "./types";
 
 export interface Props {
   isOpen: boolean;
+  closeDropdown: () => void;
   activeMenu: MenuKey | null;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
@@ -11,6 +12,7 @@ export interface Props {
 
 const Dropdown = ({
   isOpen,
+  closeDropdown,
   activeMenu,
   onMouseEnter,
   onMouseLeave,
@@ -52,7 +54,7 @@ const Dropdown = ({
           ref={contentRef}
           className={`h-max w-fit max-w-full transition-all duration-500 ease-[cubic-bezier(0.65,0.05,0.36,1)]`}
         >
-          {MENUS.find((m) => m.key === activeMenu)?.content}
+          {MENUS.find((m) => m.key === activeMenu)?.content({ closeDropdown })}
         </div>
       </div>
     </div>

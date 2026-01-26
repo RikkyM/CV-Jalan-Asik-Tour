@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Image from "@/assets/img/1.webp";
 import { memo } from "react";
 
-const PortoMenu = () => {
+const PortoMenu = ({ closeDropdown }: { closeDropdown: () => void }) => {
   return (
     <section className="font-pj flex max-w-full">
       <div className="relative my-10 flex flex-1 flex-col px-7">
@@ -16,6 +16,7 @@ const PortoMenu = () => {
               <NavLink
                 key={index}
                 to={data.to}
+                onClick={() => closeDropdown()}
                 className="group relative mb-2 flex w-full cursor-pointer items-center gap-1.5 text-2xl font-semibold"
               >
                 <span className="transition-all group-hover:translate-x-4">
@@ -29,7 +30,12 @@ const PortoMenu = () => {
         </div>
       </div>
       <div className="flex-1 p-5">
-        <img src={Image} alt="gambar" loading="eager" className="h-full max-w-90" />
+        <img
+          src={Image}
+          alt="gambar"
+          loading="eager"
+          className="h-full max-w-90"
+        />
       </div>
     </section>
   );

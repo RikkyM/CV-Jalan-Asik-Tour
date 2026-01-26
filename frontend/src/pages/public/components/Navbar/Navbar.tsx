@@ -116,6 +116,7 @@ const Navbar = () => {
           </button>
           <Dropdown
             isOpen={isOpen}
+            closeDropdown={() => setIsOpen(false)}
             activeMenu={activeMenu}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}

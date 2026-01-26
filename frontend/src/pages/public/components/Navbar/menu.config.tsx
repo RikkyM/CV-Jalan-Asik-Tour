@@ -7,16 +7,20 @@ export const MENUS: MenuItem[] = [
   {
     key: "profile",
     label: "Profile",
-    content: <ProfileMenu/>,
+    content: ({ closeDropdown }) => (
+      <ProfileMenu closeDropdown={closeDropdown} />
+    ),
   },
   {
     key: "produk",
     label: "Produk",
-    content: <ProdukMenu/>,
+    content: ({ closeDropdown }) => (
+      <ProdukMenu closeDropdown={closeDropdown} />
+    ),
   },
   {
     key: "porto",
     label: "Porto",
-    content: <PortoMenu/>,
+    content: ({ closeDropdown }) => <PortoMenu closeDropdown={closeDropdown} />,
   },
 ];
