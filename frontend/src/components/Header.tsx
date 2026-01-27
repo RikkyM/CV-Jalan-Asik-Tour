@@ -1,15 +1,17 @@
+import { useSidebar } from "@/hooks/useSidebar";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const { toggle } = useSidebar();
   const { pathname } = useLocation();
   return (
-    <header className="h-20 min-h-20 max-h-20 flex items-center justify-between px-4 bg-yellow-500">
-      <h2 className="capitalize font-semibold text-xl">
-        {pathname.replace("/", "").replace("-", ' ')}
+    <header className="flex h-20 max-h-20 min-h-20 items-center justify-between bg-yellow-500 px-4">
+      <h2 className="text-xl font-semibold capitalize">
+        {pathname.replace("/", "").replace("-", " ")}
       </h2>
-      <p>sadkasldk</p>
+      <button type="button" onClick={() => toggle()}>side</button>
     </header>
   );
 };
- 
+
 export default Header;

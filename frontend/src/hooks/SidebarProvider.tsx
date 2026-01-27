@@ -8,7 +8,9 @@ export const SidebarProvider = ({
 }) => {
   const [sideOpen, setSideOpen] = useState(false);
 
-  const toggle = () => setSideOpen((prev) => !prev);
+  const toggle = (value?: boolean) => {
+    setSideOpen((prev) => (typeof value === "boolean" ? value : !prev));
+  };
 
   return (
     <SidebarContext.Provider value={{ sideOpen, toggle }}>

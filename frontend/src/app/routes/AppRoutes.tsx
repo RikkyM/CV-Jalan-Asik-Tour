@@ -31,7 +31,12 @@ const AppRoutes = () => {
 
       <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<DashboardPages />} />
+        <Route path="/surat" element={<>adasd</>} />
         {/* <Route path="/template-surat" element={<TemplatePages />} /> */}
+
+        <Route path="/master">
+          <Route path="kategori"/>
+        </Route>
       </Route>
     </Routes>
   );

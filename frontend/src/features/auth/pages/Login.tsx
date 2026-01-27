@@ -8,16 +8,16 @@ const Login = () => {
   return (
     <>
       <title>Login</title>
-      <div className="mx-auto bg-white w-full h-full flex">
-        <div className="flex-1 bg-white p-4 hidden lg:block">
-          <div className="h-full w-full rounded-tl-2xl rounded-br-2xl relative overflow-hidden">
+      <div className="mx-auto flex h-full w-full bg-white">
+        <div className="hidden flex-1 bg-white p-4 lg:block">
+          <div className="relative h-full w-full overflow-hidden  rounded-tl-2xl rounded-br-2xl">
             <div>
               <img
                 src={bg}
                 alt="background"
-                className="object-cover brightness-75 absolute inset-0 object-center w-full h-full"
+                className="absolute inset-0 h-full w-full object-cover object-center brightness-75"
               />
-              <div className="absolute inset-0 flex space-y-3 justify-center text-white flex-col max-w-2xl mx-10">
+              <div className="absolute inset-0 mx-10 flex max-w-2xl flex-col justify-center space-y-3 text-white">
                 <h2 className="text-4xl font-semibold">
                   Jelajahi Dunia, Nikmati Kenyamanan
                 </h2>
@@ -28,27 +28,17 @@ const Login = () => {
                 </p>
               </div>
             </div>
-            <div
-              className="absolute top-0 right-0 h-24 w-52 bg-white rounded-bl-[3rem]
-            after:content-[''] after:size-10 after:bg-transparent after:absolute after:top-0 after:-left-10 after:rounded-tr-4xl after:shadow-[0.5rem_-0.75rem_rgba(255,255,255,1)]
-            before:content-[''] before:size-10 before:bg-transparent before:absolute before:right-0 before:-bottom-10 before:rounded-tr-4xl before:shadow-[0.5rem_-0.75rem_rgba(255,255,255,1)]
-          "
-            ></div>
-            <div
-              className="absolute bottom-0 left-0 h-24 w-52 bg-white rounded-tr-[3rem]
-            after:content-[''] after:size-10 after:bg-transparent after:absolute after:-top-10 after:left-0 after:rounded-bl-4xl after:shadow-[-0.75rem_0.5rem_rgba(255,255,255,1)]
-            before:content-[''] before:size-10 before:bg-transparent before:absolute before:-right-10 before:bottom-0 before:rounded-bl-4xl before:shadow-[-0.75rem_0.5rem_rgba(255,255,255,1)]
-          "
-            ></div>
+            <div className="absolute top-0 right-0 h-24 w-52 rounded-bl-[3rem] bg-white before:absolute before:right-0 before:-bottom-10 before:size-10 before:rounded-tr-4xl before:bg-transparent before:shadow-[0.5rem_-0.75rem_rgba(255,255,255,1)] before:content-[''] after:absolute after:top-0 after:-left-10 after:size-10 after:rounded-tr-4xl after:bg-transparent after:shadow-[0.5rem_-0.75rem_rgba(255,255,255,1)] after:content-['']"></div>
+            <div className="absolute bottom-0 left-0 h-24 w-52 rounded-tr-[3rem] bg-white before:absolute before:-right-10 before:bottom-0 before:size-10 before:rounded-bl-4xl before:bg-transparent before:shadow-[-0.75rem_0.5rem_rgba(255,255,255,1)] before:content-[''] after:absolute after:-top-10 after:left-0 after:size-10 after:rounded-bl-4xl after:bg-transparent after:shadow-[-0.75rem_0.5rem_rgba(255,255,255,1)] after:content-['']"></div>
           </div>
         </div>
-        <section className="flex-1 p-2 flex items-center justify-center">
-          <div className="bg-white mb-10 max-w-md w-full p-3 rounded space-y-5">
-            <div className="relative w-full h-44 overflow-hidden rounded-xl lg:hidden">
+        <section className="flex flex-1 items-center justify-center p-2">
+          <div className="mb-10 w-full max-w-md space-y-5 rounded bg-white p-3">
+            <div className="relative h-44 w-full overflow-hidden rounded-xl lg:hidden">
               <img
                 src={bg}
                 alt="background"
-                className="object-cover brightness-75 inset-0 object-center w-full h-full"
+                className="inset-0 h-full w-full object-cover object-center brightness-75"
               />
             </div>
             <div>
