@@ -1,5 +1,5 @@
+import { SidebarContext } from "@/contexts/SidebarContext";
 import { useState } from "react";
-import { SidebarContext } from "../contexts/SidebarContext";
 
 export const SidebarProvider = ({
   children,

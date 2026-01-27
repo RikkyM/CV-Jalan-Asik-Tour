@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Dropdown from "./Dropdown";
 import type { MenuKey } from "./types";
 import { MENUS } from "./menu.config";
-import { useSidebar } from "../../hooks/useSidebar";
+import { useSidebar } from "@/hooks/useSidebar";
 
 const Navbar = () => {
   const { toggle } = useSidebar();

@@ -13,6 +13,30 @@
 @theme {
   --font-pj: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-poppins: "Poppins", system-ui, sans-serif;
+
+  /* --animate-reveal-icon: reveal-icon-in;
+  --animate-reveal-icon-out: reveal-icon-out; */
+  @keyframes reveal-icon-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes reveal-icon-out {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
 }
 
 /* plus jakarta = title */

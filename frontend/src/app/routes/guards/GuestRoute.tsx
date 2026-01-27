@@ -1,7 +1,7 @@
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate, Outlet } from "react-router-dom";
 
-const PublicRoute = () => {
+const GuestRoute = () => {
   const { user, loading } = useAuth();
 
   if (loading) return null;
@@ -9,4 +9,4 @@ const PublicRoute = () => {
   return user ? <Navigate to="/dashboard" replace /> : <Outlet />;
 };
 
-export default PublicRoute;
+export default GuestRoute;

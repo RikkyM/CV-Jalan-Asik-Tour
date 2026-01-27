@@ -1,9 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSidebar } from "../hooks/useSidebar";
 import Logo80 from "@/assets/img/logo-80.webp";
 import Logo160 from "@/assets/img/logo-160.webp";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useSidebar } from "@/hooks/useSidebar";
 
 const Sidebar = () => {
   const { toggle, sideOpen } = useSidebar();
@@ -42,12 +42,13 @@ const Sidebar = () => {
             setActiveDropdown(null);
             toggle();
           }}
-          className="cursor-pointer rounded p-1.5 font-mono transition-colors duration-300 hover:bg-gray-300 outline-none" tabIndex={-1}
+          className="cursor-pointer rounded p-1.5 font-mono transition-colors duration-300 outline-none hover:bg-gray-300"
+          tabIndex={-1}
         >
           <span className="text-sm font-semibold">Close</span>
         </button>
       </div>
-      <div className="mx-auto flex h-full max-w-7xl overflow-auto flex-col py-3 pr-6 pl-3 text-xl text-gray-500 *:border-t *:border-gray-300 *:py-2">
+      <div className="mx-auto flex h-full max-w-7xl flex-col overflow-auto py-3 pr-6 pl-3 text-xl text-gray-500 *:border-t *:border-gray-300 *:py-2 selection:bg-transparent">
         {[
           {
             label: "Home",
@@ -117,48 +118,53 @@ const Sidebar = () => {
         ].map((data, index) => {
           if (data.type === "dropdown") {
             return (
-              <label
-                key={data.label}
-                htmlFor={data.label}
-                className="cursor-pointer"
-              >
-                <input
-                  type="radio"
-                  className="peer"
-                  name="radio"
-                  id={data.label}
-                  checked={activeDropdown === data.label}
-                  onChange={() => setActiveDropdown(data.label)}
-                  hidden
-                />
-                <span
-                  style={
-                    sideOpen && activeDropdown === null
-                      ? { transitionDelay: `${index * 100}ms` }
-                      : { transitionDelay: "0ms" }
-                  }
-                  className={`inline-block peer-checked:text-sm ${sideOpen ? "translate-y-0 opacity-100 transition-all duration-300" : "translate-y-5 opacity-0 transition-none"}`}
+              <div key={data.label}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveDropdown(
+                      // activeDropdown === data.label ? null : data.label,
+                      data.label,
+                    );
+                  }}
+                  className="flex w-full cursor-pointer items-center"
                 >
-                  {data.label}
-                </span>
-                <div className="max-h-0 space-y-2 overflow-hidden transition-[max-height] duration-300 ease-[cubic-bezier(0.65,0.05,0.36,1)] peer-checked:max-h-96">
-                  {data.navigate?.map((item) => (
-                    <button
-                      type="button"
-                      key={item.label}
-                      // tabIndex={activeDropdown === null ? -1 : }
-                      className="group relative flex w-full cursor-pointer items-center gap-2 text-left font-medium text-black"
-                      onClick={() => handleNavigate(item.to)}
-                      onFocus={() => setActiveDropdown(data.label)}
-                    >
-                      <div className="relative flex w-max items-center pr-8">
-                        <span>{item.label}</span>
-                        <ArrowUpRight className="opacity-0 transition-all duration-300 group-hover:opacity-100" />
-                      </div>
-                    </button>
-                  ))}
+                  <span
+                    style={
+                      sideOpen && activeDropdown === null
+                        ? { transitionDelay: `${index * 70}ms` }
+                        : { transitionDelay: "0ms" }
+                    }
+                    className={`inline-block ${sideOpen ? "translate-y-0 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.46,0.03,0.52,0.96)]" : "translate-y-5 opacity-0 transition-none"} ${activeDropdown === data.label && "text-sm"} `}
+                  >
+                    {data.label}
+                  </span>
+                </button>
+                <div
+                  className={`space-y-2 overflow-hidden ease-[cubic-bezier(0.65,0.05,0.36,1)] ${activeDropdown === data.label ? "max-h-96 transition-[max-height] duration-400" : "max-h-0"} `}
+                >
+                  <ul className="space-y-2 font-medium text-black">
+                    {data.navigate?.map((item, idx) => (
+                      <li key={item.label}>
+                        <button
+                          type="button"
+                          onClick={() => handleNavigate(item.to)}
+                          style={
+                            activeDropdown === data.label
+                              ? { transitionDelay: `${idx * 65}ms` }
+                              : { transitionDelay: "0ms" }
+                          }
+                          onFocus={() => setActiveDropdown(data.label)}
+                          className={`group flex cursor-pointer items-center gap-1 transition-all duration-300 ${activeDropdown === data.label ? "opacity-100" : "opacity-0"}`}
+                        >
+                          <span>{item.label}</span>
+                          <ArrowUpRight className="size-5 animate-[reveal-icon-out_300ms_cubic-bezier(0.46,0.03,0.52,0.96)] opacity-0 transition-all duration-300 group-hover:animate-[reveal-icon-in_300ms_cubic-bezier(0.46,0.03,0.52,0.96)] group-hover:opacity-100" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </label>
+              </div>
             );
           }
 
@@ -170,8 +176,8 @@ const Sidebar = () => {
               className={`cursor-pointer text-left`}
             >
               <span
-                style={{ transitionDelay: `${index * 100}ms` }}
-                className={`inline-block ${sideOpen ? "translate-y-0 opacity-100 transition-all duration-300" : "translate-y-5 opacity-0 transition-none"}`}
+                style={{ transitionDelay: `${index * 70}ms` }}
+                className={`inline-block ${sideOpen ? "translate-y-0 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.46,0.03,0.52,0.96)]" : "translate-y-5 opacity-0 transition-none"}`}
               >
                 {data.label}
               </span>
