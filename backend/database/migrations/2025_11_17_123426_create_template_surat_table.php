@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_surat');
             $table->string('file_surat');
+            $table->string('type');
             $table->timestamps();
         });
     }
