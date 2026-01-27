@@ -58,7 +58,7 @@
   display: none;
 }
 
-// Plus Jakarta Sans
+/* Plus Jakarta Sans */
 @font-face {
   font-family: "Plus Jakarta Sans";
   src: url("/font/Plus_Jakarta_Sans_use/PlusJakartaSans-Regular.ttf")
@@ -99,7 +99,7 @@
   font-display: swap;
 }
 
-// Poppins
+/* Poppins */
 @font-face {
   font-family: "Poppins";
   src: url("/font/Poppins_use/Poppins-Thin.ttf") format("truetype");
