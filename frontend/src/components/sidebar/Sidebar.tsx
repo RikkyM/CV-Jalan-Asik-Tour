@@ -93,11 +93,14 @@ const Sidebar = () => {
                                 key={child.key}
                                 className={`relative my-1 rounded-bl-md whitespace-nowrap ${sideOpen ? "" : ""}`}
                               >
-                                <NavLink to={child.to} onClick={() => {
-                                  if (window.innerWidth < 1024) {
-                                    toggle(false);
-                                  }
-                                }}>
+                                <NavLink
+                                  to={child.to}
+                                  onClick={() => {
+                                    if (window.innerWidth < 1024) {
+                                      toggle(false);
+                                    }
+                                  }}
+                                >
                                   {({ isActive }) => (
                                     <div
                                       className={[
@@ -138,7 +141,13 @@ const Sidebar = () => {
                     key={data.key}
                     to={data.to}
                     className="inline-block w-full"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      
+                      if (window.innerWidth < 1024) {
+                        toggle(false);
+                      }
+                    }}
                   >
                     {({ isActive }) => (
                       <div

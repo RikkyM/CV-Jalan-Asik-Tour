@@ -95,7 +95,7 @@ const Navbar = () => {
           <NavLink
             to="/login"
             onMouseEnter={closeDropdown}
-            className="group relative rounded-sm bg-transparent px-3 py-1.5 font-mono text-sm font-medium outline-none md:text-base lg:py-1"
+            className="group relative rounded-sm bg-transparent overflow-hidden px-3 py-1.5 font-mono text-sm font-medium outline-none md:text-base lg:py-1"
           >
             <div className="absolute top-0 left-0 z-10 h-full w-full rounded-md border transition-all duration-300 group-hover:scale-85"></div>
             <div className="relative text-black transition-all duration-300 group-hover:scale-85">
